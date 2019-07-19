@@ -49,8 +49,8 @@ this.setState({
   }
 
   componentDidMount(){
-   //fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=10', { mode: 'opaque'})
-    fetch('./cats.json')
+   const proxyurl = "https://cors-anywhere.herokuapp.com/";
+   fetch(proxyurl+'https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=10')
     .then(response => response.json())
     .then(result => {
       const apts = result.map(item => {
